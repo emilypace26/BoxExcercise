@@ -27,8 +27,19 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKey(KeyCode.RightArrow))
         {
             //move the player to the right
-            transform.Translate(_speed * Time.deltaTime,0,0)
-        };
+            transform.Translate(_speed * Time.deltaTime,0,0);
+            //Moving to the right changes the colour of the player to blue
+            gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        }
+        
+        else if(Input.GetKey(KeyCode.LeftArrow))
+        {
+            //move player to the left
+            transform.Translate(-_speed * Time.deltaTime,0,0);
+            //Moving to the left chnages the colour of the player to green
+            gameObject.GetComponent<Renderer>().material.color = Color.green;
+        }
+    
         
     }
 }
